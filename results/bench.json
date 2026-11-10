@@ -1,0 +1,384 @@
+{
+  "generated": "2026-11-10T15:01:00",
+  "python": "3.12.4",
+  "note": "SIMULATED model with injected errors; prices/latencies are assumptions, not provider quotes",
+  "error_model": {
+    "p_format": 0.03,
+    "p_tool_transient": 0.03,
+    "p_wrong_base": 0.01,
+    "p_wrong_per_1k_ctx": 0.012,
+    "max_ctx": 6000,
+    "p_handoff_loss": 0.08,
+    "p_recover": 0.6,
+    "p_plan_per_step": 0.008,
+    "max_retries": 2
+  },
+  "pricing": {
+    "usd_per_m_in": 0.15,
+    "usd_per_m_out": 0.6,
+    "ttft_s": 0.25,
+    "s_per_out_token": 0.012,
+    "s_per_1k_in": 0.03
+  },
+  "tasks_per_family": 50,
+  "trials": 4,
+  "overall": {
+    "single": {
+      "n": 800,
+      "success": 0.8662,
+      "mean_cost_usd_per_1k_tasks": 1.4241,
+      "mean_tokens": 8515.3,
+      "mean_calls": 7.66,
+      "p50_latency_s": 7.11,
+      "p95_latency_s": 8.64,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 107
+      }
+    },
+    "planner": {
+      "n": 800,
+      "success": 0.8113,
+      "mean_cost_usd_per_1k_tasks": 1.1741,
+      "mean_tokens": 5917.9,
+      "mean_calls": 11.79,
+      "p50_latency_s": 7.49,
+      "p95_latency_s": 11.66,
+      "agents": 5.0,
+      "failures": {
+        "handoff_loss": 54,
+        "wrong_arg": 67,
+        "bad_plan": 30
+      }
+    },
+    "handoff": {
+      "n": 800,
+      "success": 0.82,
+      "mean_cost_usd_per_1k_tasks": 1.0577,
+      "mean_tokens": 5837.1,
+      "mean_calls": 9.32,
+      "p50_latency_s": 8.71,
+      "p95_latency_s": 10.21,
+      "agents": 2.5,
+      "failures": {
+        "wrong_arg": 76,
+        "handoff_loss": 68
+      }
+    }
+  },
+  "by_family": {
+    "single/simple": {
+      "n": 200,
+      "success": 0.975,
+      "mean_cost_usd_per_1k_tasks": 0.4278,
+      "mean_tokens": 2418.7,
+      "mean_calls": 3.11,
+      "p50_latency_s": 2.5,
+      "p95_latency_s": 3.25,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 5
+      }
+    },
+    "planner/simple": {
+      "n": 200,
+      "success": 0.945,
+      "mean_cost_usd_per_1k_tasks": 0.4464,
+      "mean_tokens": 2239.9,
+      "mean_calls": 5.15,
+      "p50_latency_s": 4.19,
+      "p95_latency_s": 4.93,
+      "agents": 3.0,
+      "failures": {
+        "handoff_loss": 6,
+        "wrong_arg": 3,
+        "bad_plan": 2
+      }
+    },
+    "handoff/simple": {
+      "n": 200,
+      "success": 0.985,
+      "mean_cost_usd_per_1k_tasks": 0.2692,
+      "mean_tokens": 1361.2,
+      "mean_calls": 3.11,
+      "p50_latency_s": 2.47,
+      "p95_latency_s": 3.21,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 3
+      }
+    },
+    "single/deep": {
+      "n": 200,
+      "success": 0.84,
+      "mean_cost_usd_per_1k_tasks": 1.8508,
+      "mean_tokens": 11136.5,
+      "mean_calls": 9.52,
+      "p50_latency_s": 7.11,
+      "p95_latency_s": 8.65,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 32
+      }
+    },
+    "planner/deep": {
+      "n": 200,
+      "success": 0.77,
+      "mean_cost_usd_per_1k_tasks": 1.6329,
+      "mean_tokens": 8843.8,
+      "mean_calls": 11.55,
+      "p50_latency_s": 10.9,
+      "p95_latency_s": 12.41,
+      "agents": 3.0,
+      "failures": {
+        "bad_plan": 11,
+        "wrong_arg": 30,
+        "handoff_loss": 5
+      }
+    },
+    "handoff/deep": {
+      "n": 200,
+      "success": 0.815,
+      "mean_cost_usd_per_1k_tasks": 1.3738,
+      "mean_tokens": 7643.7,
+      "mean_calls": 11.64,
+      "p50_latency_s": 8.71,
+      "p95_latency_s": 10.21,
+      "agents": 3.0,
+      "failures": {
+        "handoff_loss": 11,
+        "wrong_arg": 26
+      }
+    },
+    "single/wide": {
+      "n": 200,
+      "success": 0.775,
+      "mean_cost_usd_per_1k_tasks": 1.8522,
+      "mean_tokens": 11145.2,
+      "mean_calls": 9.53,
+      "p50_latency_s": 7.11,
+      "p95_latency_s": 8.65,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 45
+      }
+    },
+    "planner/wide": {
+      "n": 200,
+      "success": 0.685,
+      "mean_cost_usd_per_1k_tasks": 1.4563,
+      "mean_tokens": 6800.3,
+      "mean_calls": 18.91,
+      "p50_latency_s": 6.11,
+      "p95_latency_s": 6.86,
+      "agents": 10.0,
+      "failures": {
+        "handoff_loss": 37,
+        "bad_plan": 6,
+        "wrong_arg": 20
+      }
+    },
+    "handoff/wide": {
+      "n": 200,
+      "success": 0.645,
+      "mean_cost_usd_per_1k_tasks": 1.3943,
+      "mean_tokens": 7771.6,
+      "mean_calls": 11.92,
+      "p50_latency_s": 9.22,
+      "p95_latency_s": 10.47,
+      "agents": 3.0,
+      "failures": {
+        "wrong_arg": 29,
+        "handoff_loss": 42
+      }
+    },
+    "single/mixed": {
+      "n": 200,
+      "success": 0.875,
+      "mean_cost_usd_per_1k_tasks": 1.5656,
+      "mean_tokens": 9360.6,
+      "mean_calls": 8.47,
+      "p50_latency_s": 6.33,
+      "p95_latency_s": 7.86,
+      "agents": 1.0,
+      "failures": {
+        "wrong_arg": 25
+      }
+    },
+    "planner/mixed": {
+      "n": 200,
+      "success": 0.845,
+      "mean_cost_usd_per_1k_tasks": 1.1609,
+      "mean_tokens": 5787.8,
+      "mean_calls": 11.56,
+      "p50_latency_s": 7.49,
+      "p95_latency_s": 8.98,
+      "agents": 4.0,
+      "failures": {
+        "handoff_loss": 6,
+        "wrong_arg": 14,
+        "bad_plan": 11
+      }
+    },
+    "handoff/mixed": {
+      "n": 200,
+      "success": 0.835,
+      "mean_cost_usd_per_1k_tasks": 1.1934,
+      "mean_tokens": 6572.1,
+      "mean_calls": 10.6,
+      "p50_latency_s": 7.95,
+      "p95_latency_s": 9.45,
+      "agents": 3.0,
+      "failures": {
+        "wrong_arg": 18,
+        "handoff_loss": 15
+      }
+    }
+  },
+  "sweeps": [
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.0,
+      "family": "deep",
+      "single": 0.945,
+      "planner": 0.88,
+      "handoff": 0.93
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.0,
+      "family": "wide",
+      "single": 0.9,
+      "planner": 0.62,
+      "handoff": 0.655
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.006,
+      "family": "deep",
+      "single": 0.9,
+      "planner": 0.845,
+      "handoff": 0.915
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.006,
+      "family": "wide",
+      "single": 0.85,
+      "planner": 0.62,
+      "handoff": 0.63
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.012,
+      "family": "deep",
+      "single": 0.845,
+      "planner": 0.81,
+      "handoff": 0.875
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.012,
+      "family": "wide",
+      "single": 0.805,
+      "planner": 0.61,
+      "handoff": 0.615
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.024,
+      "family": "deep",
+      "single": 0.765,
+      "planner": 0.765,
+      "handoff": 0.835
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.024,
+      "family": "wide",
+      "single": 0.725,
+      "planner": 0.58,
+      "handoff": 0.58
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.048,
+      "family": "deep",
+      "single": 0.605,
+      "planner": 0.675,
+      "handoff": 0.755
+    },
+    {
+      "param": "p_wrong_per_1k_ctx",
+      "value": 0.048,
+      "family": "wide",
+      "single": 0.55,
+      "planner": 0.55,
+      "handoff": 0.53
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.0,
+      "family": "deep",
+      "single": 0.845,
+      "planner": 0.835,
+      "handoff": 0.9
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.0,
+      "family": "wide",
+      "single": 0.805,
+      "planner": 0.88,
+      "handoff": 0.865
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.04,
+      "family": "deep",
+      "single": 0.845,
+      "planner": 0.825,
+      "handoff": 0.89
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.04,
+      "family": "wide",
+      "single": 0.805,
+      "planner": 0.74,
+      "handoff": 0.71
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.08,
+      "family": "deep",
+      "single": 0.845,
+      "planner": 0.81,
+      "handoff": 0.875
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.08,
+      "family": "wide",
+      "single": 0.805,
+      "planner": 0.61,
+      "handoff": 0.615
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.16,
+      "family": "deep",
+      "single": 0.845,
+      "planner": 0.785,
+      "handoff": 0.82
+    },
+    {
+      "param": "p_handoff_loss",
+      "value": 0.16,
+      "family": "wide",
+      "single": 0.805,
+      "planner": 0.51,
+      "handoff": 0.5
+    }
+  ]
+}

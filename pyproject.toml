@@ -1,0 +1,13 @@
+[project]
+name = "harness-bench"
+version = "0.1.0"
+description = "Same tasks, three agent harnesses: single agent vs planner+sub-agents vs handoff chain"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
